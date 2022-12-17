@@ -13,10 +13,10 @@ def get_voices(voice):
      voices = engine.getProperty('voices') #using the property: #voices
      if voice == 1:
           engine.setProperty("voice",voices[0].id) 
-          speak("hello this is boy voice")
+          speak("Hello I am a male voice")
      if voice ==2:
           engine.setProperty("voice",voices[1].id)
-          speak("Hello my name is wanita your creepy virtual assistant")
+          speak("Hello I am a female voice")
 
 
 def takeCommandmic():
@@ -49,7 +49,7 @@ if __name__ == "__main__":
         if "flip" in query:
             flip()
         else:
-            speak("That is not a command I recognize yet piss off")
+            speak("That is not a command I recognize yet I am sorry")
         
 
 

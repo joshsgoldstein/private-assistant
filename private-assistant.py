@@ -1,6 +1,7 @@
 import pyttsx3
 import speech_recognition as src #shortening the library name
 import random
+import pyjokes
 
 
 engine = pyttsx3.init() #creating the engine
@@ -23,7 +24,7 @@ def takeCommandmic():
    r = src.Recognizer() #creating the recognizer and defining it to #variable
    
    with src.Microphone() as source: #opening mic
-        print("listening")
+        speak("Pleas say a command")
         r.pause_threshold = 1
         audio = r.listen(source)
         try:
@@ -43,11 +44,15 @@ def flip():
     speak(sentence)
 
 if __name__ == "__main__":
-      get_voices(2) #setting the voice to girl or boy
+      get_voices(1) #setting the voice to girl or boy
       while True:
         query= takeCommandmic().lower() #getting mic input until #program breaks
         if "flip" in query:
             flip()
+        elif "joke" in query:
+            speak(pyjokes.get_joke())
+        elif "close" in query:
+            break #closes the assistant
         else:
             speak("That is not a command I recognize yet I am sorry")
         
